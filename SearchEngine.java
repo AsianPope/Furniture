@@ -17,15 +17,15 @@ public class SearchEngine{
 	String location = "";
 	String color = "";
 	
-	public String item(String input) {//------------------ finds the item searched
+	public String item(String input) {//-------------------- finds the item searched
 		return "";
 	}
 	
-	public String[] segustions() {//---------------------- returns a list of similar objects
+	public String[] segustions() {//------------------------ returns a list of similar objects
 		return null;
 	}
 	
-	public String materials() {//-------------------------- returns materials used in an item (if provided)
+	public String materials() {//--------------------------- returns materials used in an item (if provided)
 		return "";
 	}
 	
