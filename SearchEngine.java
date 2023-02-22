@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.*;
 @SuppressWarnings("unused")
+
 public class SearchEngine{
 	
 	static String itemType = "";
@@ -16,9 +17,10 @@ public class SearchEngine{
 	int z = 0;
 	String location = "";
 	String color = "";
-	
+
 	public String item(String input) {//-------------------- finds the item searched
-		return "";
+		itemType = input;
+		return itemType;
 	}
 	
 	public String[] segustions() {//------------------------ returns a list of similar objects
@@ -26,6 +28,7 @@ public class SearchEngine{
 	}
 	
 	public String materials() {//--------------------------- returns materials used in an item (if provided)
+		
 		return "";
 	}
 	
