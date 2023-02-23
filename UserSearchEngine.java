@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class UserSearchEngine{
 	
@@ -11,5 +12,12 @@ public class UserSearchEngine{
 	String color = "";
 
 	public static void main(String[]args) {
+		Scanner user = new Scanner(System.in);
+    	System.out.println("Furniture Type?");
+		String furniture = user.nextLine();
+		//list or array thing .search for furniture
+		//prints all instances in the list to the screen
+		//the user can then click on links that bring them to the page of the item.
+		// maybe a while loop before they type exit or sommin
 	}
 }
