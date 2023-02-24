@@ -3,53 +3,61 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.*;
-@SuppressWarnings("unused")
+//package testFile.xlsx;
 
+@SuppressWarnings("unused")
 public class SearchEngine{
 	
-	static String itemType = "";
-	String material = "";
-	double price = 0.0;
-	int x = 0;
-	int y = 0;
-	int z = 0;
-	String location = "";
-	String color = "";
+	String itemType = "";
+	String[] data = null;
+	
+	@SuppressWarnings("resource")
+	public static void main(String[]args) {
+	 try
+     {
+         FileInputStream file = new FileInputStream(new File("testSheet.xlsx"));
 
-	public String item(String input) {//-------------------- finds the item searched
-		itemType = input;
-		return itemType;
-	}
-	
-	public String[] segustions() {//------------------------ returns a list of similar objects
-		return null;
-	}
-	
-	public String materials() {//--------------------------- returns materials used in an item (if provided)
-		
-		return "";
-	}
-	
-	public int price() {//---------------------------------- returns the price of target item
-		return 0;
-	}
-	
-	public String location() {//---------------------------- finds the location of an item in the spreadsheet provided
-		return "";
-	}
-	
-	
-	public String dimensions() {//-------------------------- uses spreadsheet to find and output the dimensions of an item if provided(in x,y,z format)
-		return "";
-	}
-	
-	
-	public String ToString() {//---------------------------- front end / the output side
-		String output = "";
-		output += " price: "+price();
-		return output;
-	}
-	
+         //Create Workbook instance holding reference to .xlsx file
+         XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+         //Get first/desired sheet from the workbook
+         XSSFSheet sheet = workbook.getSheetAt(0);
+
+         //Iterate through each rows one by one
+         Iterator<Row> rowIterator = sheet.iterator();
+         while (rowIterator.hasNext()) 
+         {
+             Row row = rowIterator.next();
+             //For each row, iterate through all the columns
+             Iterator<Cell> cellIterator = row.cellIterator();
+              
+             while (cellIterator.hasNext()) 
+             {
+                 Cell cell = cellIterator.next();
+                 //Check the cell type and format accordingly
+                 switch (cell.getCellType()) //------------------------------------------- should output the file's contents
+                 {
+                     case NUMERIC:
+                         System.out.print(cell.getNumericCellValue() + "t");
+                         break;
+                     case STRING:
+                         System.out.print(cell.getStringCellValue() + "t");
+                         break;
+                     default:
+                    	 System.out.println("incorrect data type");
+                    	 break;
+                 }    
+             }
+             System.out.println("");
+         }
+         file.close();
+     } 
+     catch (Exception e) 
+     {
+         e.printStackTrace();
+     }
+ }
 }
