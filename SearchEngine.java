@@ -55,9 +55,9 @@ public class SearchEngine{
          }
          file.close();
      } 
-     catch (Exception e) 
-     {
-         e.printStackTrace();
-     }
- }
+    catch (Exception e) 
+    {
+        e.printStackTrace();
+    }
+    }
 }
