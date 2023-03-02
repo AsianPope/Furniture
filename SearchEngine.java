@@ -8,16 +8,16 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.*;
 //package testFile.xlsx;
 
+
 @SuppressWarnings("unused")
 public class SearchEngine{
 	
-	String itemType = "";
-	static String[] data = null;
-    static String[][] furnatureData = null;
+	//public String itemType = "";
+	//public static String[] data = null;
+    public String[][] furnatureData = null;
 	
-	@SuppressWarnings("resource")
-	public static void main(String[]args) {
-	 try
+    SearchEngine(){
+        try
      {
 		 File book = new File("testSheet.xlsx");
          FileInputStream file = new FileInputStream(book);
@@ -66,5 +66,13 @@ public class SearchEngine{
      {
          e.printStackTrace();
      }
- }
+    }
+
+    public String[][] getArray(){
+        return furnatureData;
+    }
+
+	@SuppressWarnings("resource")
+	public static void main(String[]args) {
+    }
 }

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class UserSearchEngine{
+
+public class UserSearchEngine {
 	
 	static String itemType = "";
 	String material = "";
@@ -12,14 +13,16 @@ public class UserSearchEngine{
 	String color = "";
 
 	public static void main(String[]args) {
+		SearchEngine SE = new SearchEngine();
+		String[][] FD = SE.getArray();
 		try{
 			Scanner user = new Scanner(System.in);
     		System.out.println("Furniture Type?");
 			String furniture = user.nextLine();
 			furniture.toLowerCase();
-			for (int i = 0; i < array.length; i++){
-				if(array[i].equals(furniture)){
-					System.out.println(array[i]);
+			for (int i = 0; i < FD.length; i++){
+				if(FD[i].equals(furniture)){
+					System.out.println(FD[i]);
 				}
 			}
 			//list or array thing .search for furniture
