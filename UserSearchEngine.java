@@ -13,7 +13,7 @@ public class UserSearchEngine {
 	String color = "";
 
 	public static void main(String[]args) {
-		SearchEngine SE = new SearchEngine();
+		GrabData SE = new GrabData();
 		String[][] FD = SE.getArray();
 		try{
 			Scanner user = new Scanner(System.in);
