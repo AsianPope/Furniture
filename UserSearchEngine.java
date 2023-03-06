@@ -12,6 +12,9 @@ public class UserSearchEngine {
 	String location = "";
 	String color = "";
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[]args) {
 		GrabData SE = new GrabData();
 		String[][] FD = SE.getArray();
@@ -20,8 +23,8 @@ public class UserSearchEngine {
     		System.out.println("Furniture Type?");
 			String furniture = user.nextLine();
 			furniture.toLowerCase();
-			for (int i = 0; i < FD.length; i++){
-				if(FD[i].equals(furniture)){
+			for (int i = 1; i < FD.length; i++){
+				if(FD[i][0].equals(furniture)){
 					System.out.println(FD[i]);
 				}
 			}
