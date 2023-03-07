@@ -1,10 +1,6 @@
 import java.io.*;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.*;
+import org.apache.poi.xssf.usermodel.*;
 import java.util.*;	
 	@SuppressWarnings({ "resource", "unused" })
 	public class GrabData{
@@ -16,7 +12,7 @@ import java.util.*;
 	    GrabData(){
 	        try
 	     {
-			 File book = new File("testSheet.xlsx");
+			 File book = new File("FurnitureProjectSheet.xlsx");
 	         FileInputStream file = new FileInputStream(book);
 	         
 	         //Create Workbook instance holding reference to .xlsx file
